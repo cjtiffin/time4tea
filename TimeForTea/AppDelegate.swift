@@ -35,11 +35,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         // Insert code here to tear down your application
     }
     
-    func showNotification(delay: Int = 5) -> Void {
+    func showNotification(delay: Int = 60) -> Void {
         let notification = NSUserNotification()
         notification.title = "Time For Tea"
         notification.subtitle = "Go and take a tea break"
-        notification.deliveryDate = Date(timeIntervalSinceNow: TimeInterval(delay * 1))
+        notification.deliveryDate = Date(timeIntervalSinceNow: TimeInterval(delay * 60))
         // need to set image
         notification.hasActionButton = true
         notification.actionButtonTitle = "2 mins"
