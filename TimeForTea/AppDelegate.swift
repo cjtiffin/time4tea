@@ -6,6 +6,11 @@
 //  Copyright © 2020 Chris Tiffin. All rights reserved.
 //
 
+// todo
+// - remove menu bars & content view
+// - add image to notification
+// - cancel scheduled notifications on exit
+
 import Cocoa
 import SwiftUI
 
