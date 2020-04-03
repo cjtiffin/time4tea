@@ -8,8 +8,11 @@
 
 // todo
 // - remove menu bars & content view
+// - add tray icon
 // - add image to notification
 // - cancel scheduled notifications on exit
+// - handle click on notification
+// - prevent notification click from launching app
 
 import Cocoa
 import SwiftUI
@@ -17,52 +20,46 @@ import SwiftUI
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
     
-    var window: NSWindow!
-    
+    var notificationCenter: NSUserNotificationCenter!
+    var notification: NSUserNotification!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        //        // Create the SwiftUI view that provides the window contents.
-        //        let contentView = ContentView()
-        //
-        //        // Create the window and set the content view.
-        //        window = NSWindow(
-        //            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-        //            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-        //            backing: .buffered, defer: false)
-        //        window.center()
-        //        window.setFrameAutosaveName("Main Window")
-        //        window.contentView = NSHostingView(rootView: contentView)
-        //        window.makeKeyAndOrderFront(nil)
-        showNotification()
-    }
-    
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-    
-    func showNotification(delay: Int = 60) -> Void {
-        let notification = NSUserNotification()
+        notification = NSUserNotification()
         notification.title = "Time For Tea"
         notification.subtitle = "Go and take a tea break"
-        notification.deliveryDate = Date(timeIntervalSinceNow: TimeInterval(delay * 60))
-        // need to set image
+        
         notification.hasActionButton = true
         notification.actionButtonTitle = "2 mins"
         notification.otherButtonTitle = "Done"
         
-        let center = NSUserNotificationCenter.default
-        center.delegate = self
-        center.scheduleNotification(notification)
+        // need to set image
+        
+        notificationCenter = NSUserNotificationCenter.default
+        notificationCenter.delegate = self
+        
+        scheduleNotification()
+    }
+    
+    func applicationWillTerminate(_ aNotification: Notification) {
+        // Insert code here to tear down your application
+        notificationCenter.removeScheduledNotification(notification)
+    }
+    
+    func scheduleNotification(delay: Int = 5) -> Void {
+        notification.deliveryDate = Date(timeIntervalSinceNow: TimeInterval(delay * 1))
+        print(notificationCenter.scheduledNotifications)
+        notificationCenter.scheduleNotification(notification)
+        print(notificationCenter.scheduledNotifications)
     }
     
     func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
-        showNotification(delay:2)
+        scheduleNotification(delay:10)
         print("2 min clicked")
     }
     
     @objc
     private func userNotificationCenter(_ center: NSUserNotificationCenter, didDismissAlert notification: NSUserNotification) {
-        showNotification()
+        scheduleNotification()
         print("Done clicked")
     }
     

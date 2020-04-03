@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BF32684B2416BEB800D77FF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32684A2416BEB800D77FF3 /* AppDelegate.swift */; };
-		BF32684D2416BEB800D77FF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32684C2416BEB800D77FF3 /* ContentView.swift */; };
 		BF32684F2416BEBE00D77FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF32684E2416BEBE00D77FF3 /* Assets.xcassets */; };
 		BF3268522416BEBE00D77FF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3268512416BEBE00D77FF3 /* Preview Assets.xcassets */; };
 		BF3268552416BEBE00D77FF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3268532416BEBE00D77FF3 /* Main.storyboard */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		BF3268472416BEB800D77FF3 /* TimeForTea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeForTea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF32684A2416BEB800D77FF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF32684C2416BEB800D77FF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF32684E2416BEBE00D77FF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF3268512416BEBE00D77FF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF3268542416BEBE00D77FF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				BF32684A2416BEB800D77FF3 /* AppDelegate.swift */,
-				BF32684C2416BEB800D77FF3 /* ContentView.swift */,
 				BF32684E2416BEBE00D77FF3 /* Assets.xcassets */,
 				BF3268532416BEBE00D77FF3 /* Main.storyboard */,
 				BF3268562416BEBE00D77FF3 /* Info.plist */,
@@ -266,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF32684D2416BEB800D77FF3 /* ContentView.swift in Sources */,
 				BF32684B2416BEB800D77FF3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
